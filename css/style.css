@@ -1,0 +1,1430 @@
+@charset "UTF-8";
+
+:root {
+    --bianco: #ffffff;
+    --verde: #566955;
+    --nero: #000000;
+    --grigio: #c5c5c5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* -----------------------------------------------Fascia verde laterale */
+/* .content {
+    background: var(--verde);
+    width: 6%;
+    position: relative;
+    z-index: 995;
+}
+
+.content:before {
+    content: '';
+    background: var(--verde);
+    top: 0;
+    right: 50vw;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    transition: .3s;
+    opacity: 0;
+} */
+
+/*----------------------------------------------------------------------- Logo Verticale */
+
+.logo_verticale {
+    width: 50px;
+    height: 250px;
+    position: fixed;
+    bottom: 6vw;
+    left: 6vw;
+    z-index: 999;
+}
+
+.logo_verticale img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*------------------------------------------------------------------- MAIN */
+
+#fasce {
+    width: 94%;
+}
+
+.lines {
+    height: 100vh;
+    width: 94%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 991;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.lines-h {
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.lines-v {
+    justify-content: space-evenly;
+}
+
+.line {
+    border: 1px solid var(--nero);
+    opacity: 0.1;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.velo-scomparsa {
+   /*  display: none; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    /* height: 100vh; */
+    background-color: var(--verde);
+    z-index: 99999999;
+}
+
+/*-------------------------------------------------------------- Header */
+
+.prima {
+    /* height: 100vh; */
+    z-index: 1;
+    padding-top: 150px;
+}
+
+.prima h1 {
+    text-align: center;
+}
+
+.prima a {
+    color: var(--nero);
+    text-decoration: none;
+    font-weight: 300;
+    color: var(--nero);
+}
+
+header {
+    text-transform: uppercase;
+    position: fixed;
+    top: 6vw;
+    left: 6vw;
+    z-index: 990;
+}
+
+#nav_responsive {
+    display: none;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    position: relative;
+    /* mix-blend-mode:; */
+}
+
+nav ul li {
+    margin-right: 62px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--nero);
+    mix-blend-mode: screen;
+}
+
+/* Pseudoelementi */
+
+nav ul li::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 1px;
+    width: 0;
+    left: 0;
+    background-color: var(--light);
+    transition: width .5s ease .1s;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+    transition: width .3s ease;
+}
+
+/*--------------------------------------------------------------------- Sezione Prima */
+
+.titolo-bottone {
+    width: 90%;
+}
+
+.titolo {
+    font-size: 90px;
+    line-height: 0.9;
+    font-weight: 200;
+    color: var(--verde);
+    grid-column: 2/3;
+    margin-top: 8vw;
+}
+
+.corsivo {
+    font-family: 'Baskerville', serif;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 110px;
+}
+
+.bottone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px auto;
+    height: 80px;
+    width: 318px;
+    text-transform: uppercase;
+    background-color: var(--verde);
+    color: var(--bianco);
+    border-radius: 3rem;
+    overflow: hidden;
+}
+
+.bottone::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    right: 0;
+    border-radius: 3rem;
+    background-color: var(--nero);
+    transition: width .4s ease .1s;
+    z-index: -1;
+}
+
+.bottone:hover::before {
+    width: 100%;
+    right: unset;
+    left: 0;    
+}
+
+.bottone a {
+    text-decoration: none;
+    color: var(--bianco);
+    font-weight: normal;
+}
+
+.freccia {
+    margin-left: 65px;
+    vertical-align: middle;
+}
+
+.fascia_verde {
+    width: 6%;
+    background-color: var(--verde);
+    z-index: 995;
+}
+
+/*------------------------------------------------------------- Sezione Seconda */
+
+#grid_uno {
+    position: relative;
+    display: grid;
+    grid-template-columns: 23.5vw auto 23.5vw;
+    grid-gap: 95px;
+    margin-top: -40vh;
+    z-index: -1;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.sinistra {
+    grid-column: 1/2;
+}
+
+.sinistra img {
+    width: 100%;
+    object-fit: cover;
+    margin-top: 45vh;
+}
+
+.blocco_centrale {
+    position: relative;
+}
+
+.centro {
+    grid-column: 2/3;
+    height: 100%;
+    object-fit: cover;
+    border: 1 px solid red;
+}
+
+.velo_gradiente {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, transparent, white);
+    z-index: 1;
+}
+
+.centro img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.destra {
+    grid-column: 3/4;
+
+}
+
+.destra img {
+    width: 100%;
+    object-fit: cover;
+    margin-top: 103px;
+}
+
+/*-------------------------------------------------------------------- Sezione Terza */
+
+.testi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    margin: -50px auto;
+    padding-bottom: 224px;
+    flex-wrap: wrap;
+}
+
+.testi-flex .titolo,
+.testi-flex>p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0 auto;
+}
+
+.testi .titolo,
+.testi .corsivo {
+    font-size: 90px;
+    line-height: 0.8;
+}
+
+.testi-flex {
+    margin-top: 20vh;
+}
+
+.testi-flex p {
+    margin-bottom: 24px;
+}
+
+.p_piu_bottone {
+    margin-top: 10vh;
+}
+
+.p-centrale {
+    width: 34%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+.testi .bottone {
+    margin-top: 9vh;
+    width: 30%;
+}
+
+/*----------------------------------------------------------------------------------- Sezione Quarta */
+
+.atelier_responsive {
+    display: none;
+}
+
+#atelier {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 0 4vw;
+    max-width: 100%;
+    margin: 0 12% 13% 12%;
+}
+
+.sezione_sinistra {
+    grid-column: 1/2;
+}
+
+.sezione_destra {
+    grid-column: 2/3;
+    padding-top: 45%;
+    margin-left: 10%;
+}
+
+.sezione_sinistra .titolo,
+.sezione_destra .titolo {
+    font-size: 85px;
+}
+
+.sezione_sinistra .corsivo,
+.sezione_destra .corsivo {
+    font-size: 85px;
+}
+
+.sezione_sinistra .p-centrale,
+.sezione_destra .p-centrale {
+    width: 90%;
+    text-align: left;
+    margin: 100px 0 0 0;
+}
+
+.sezione_sinistra .bottone,
+.sezione_destra .bottone {
+    margin: 100px 0 0 0;
+}
+
+.immagine_sinistra {
+    max-width: 85%;
+    max-height: 90%;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.immagine_sinistra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.immagine_destra {
+    max-width: 70%;
+    grid-column: 2/3;
+    transform: translate(50%, 50%);
+    grid-row: 1/2;
+    margin-bottom: 30px;
+}
+
+
+.immagine_destra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*---------------------------------------------------------------------------- Sezione Cinque */
+
+#carnet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-gap: 0 4vw;
+    max-width: 100%;
+    padding: 0 12% 13% 12%;
+    position: relative;
+    background-color: var(--verde);
+    z-index: 992;
+}
+
+#carnet .titolo,
+#carnet .corsivo {
+    grid-column: 1/2;
+    color: #ffffff;
+    font-size: 150px;
+   /*  display: block; */
+}
+
+#carnet span.carnet, #carnet span.corsivo {
+    display: block;
+}
+.inspiration {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.uno, .due, .tre {
+    overflow: hidden;
+}
+
+.uno {
+    grid-column: 2/3;
+    width: 70%;
+    height: 120%;
+    margin-top: 40%;
+    justify-self: end;
+    margin-bottom: 10%;
+}
+
+.due {
+    grid-column: 1/2;
+    width: 70%;
+    height: 80%;
+    margin-top: 20%;
+}
+
+.tre {
+    grid-column: 2/3;
+    width: 100%;
+    height: 70%;
+    justify-self: end;
+    margin-top: 80%;
+}
+
+.uno img,
+.due img,
+.tre img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 600ms ease;
+}
+
+.uno img:hover,
+.due img:hover,
+.tre img:hover {
+    scale: 1.2;
+}
+
+#carnet .bottone {
+    grid-column: 1/2;
+    justify-self: start;
+    background-color: #ffffff;
+    margin: 40% 0 0 0;
+}
+
+#carnet .bottone p {
+    color: var(--verde);
+    font-weight: 600;
+}
+
+#carnet .freccia svg {
+    width: 18px;
+    height: 18px;
+    fill: #566955;
+}
+
+/*---------------------------------------------------------------------- Sezione Sesta */
+
+#sesta {
+    text-align: center;
+    margin-top: 10%;
+}
+
+#sesta .titolo {
+    max-width: 100%;
+}
+
+#contenitore_sesta {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 12% 4% 12%;
+    margin-top: 3%;
+}
+
+.accompagnamento {
+    max-width: 95%;
+    height: 80%;
+    margin-top: 15%;
+}
+
+.accompagnamento img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#contenitore_sesta .p-centrale {
+    text-align: left;
+    width: 70%;
+}
+
+/*-------------------------------------------------------------------------- Sezione Sette */
+
+#sezione_sette {
+    text-align: center;
+    margin-top: 0 auto;
+    max-width: 100%;
+}
+
+#sezione_sette .inspiration {
+    font-weight: 600;
+}
+
+#sezione_sette .titolo {
+    margin: 0 auto 7% auto;
+}
+
+#sezione_sette .p-centrale {
+    width: 45%;
+}
+
+.marche {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+.marche {
+    padding: 0 12% 0 12%;
+    margin-bottom: 4%;
+}
+
+.marche img {
+    width: 15vw;
+}
+
+/*-------------------------------------------------------------------- Sezione Otto */
+
+#otto {
+    color: var(--bianco);
+    background-color: var(--nero);
+    overflow: hidden;
+}
+
+#otto .titolo {
+    max-width: 100vw;
+    padding: 10% 0 7% 0;
+    color: var(--bianco);
+    margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.otto_grid {
+    max-width: 100%;
+    display: grid;
+    grid-gap: 6vw;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    padding: 0 12% 6% 12%;
+}
+
+.otto_grid .p_sx {
+    grid-column: 1/2;
+    font-size: 32px;
+}
+
+.otto_grid .bottone {
+    align-self: end;
+    justify-self: right;
+    margin: 0 0 0 30%;
+    height: 90px;
+    width: 340px;
+}
+
+/*------------------------------------------------------------------------ Footer */
+
+footer {
+    color: var(--bianco);
+    background-color: var(--nero);
+    padding: 0 12% 4% 12%;
+}
+
+.contenitore_footer {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    padding-top: 8%;
+    border-top: 1px solid var(--bianco);
+}
+
+footer .inspiration {
+    /* text-align: center; */
+    margin-bottom: 7%;
+    font-weight: 600;
+}
+
+footer .p-centrale {
+    width: 60%;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 7%;
+}
+
+footer .bottone {
+    margin: 20px 0 20px 0;
+    justify-self: left;
+}
+
+.penultimo {
+    background-color: var(--nero);
+    color: #c5c5c5;
+    border: 1px solid var(--bianco);
+}
+
+footer .col_sx {
+    grid-column: 1/2;
+    justify-self: start;
+
+}
+
+footer .col_cx {
+    grid-column: 2/3;
+}
+
+.bas-rhin {
+    margin-top: 25%;
+}
+
+footer .col_dx {
+    grid-column: 3/4;
+    text-align: right;
+}
+
+footer .col_dx ul {
+    list-style-type: none;
+    padding: 25% 0 30% 0;
+}
+
+footer .col_dx li {
+    margin-bottom: 10px;
+}
+
+footer .col_dx a {
+    text-decoration: none;
+    color: var(--bianco);
+}
+
+.mars_rouge {
+    width: 50px;
+    filter: invert(1);
+}
+
+/*---------------------------------------------------------------------- Animazione */
+
+.animazione {
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    background-color: var(--nero);
+    border-radius: 50%;
+    z-index: 998;
+}
+
+.animazione_titolo {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 150px;
+    height: 150px;
+    z-index: 999;
+    filter: invert(1);
+    padding: 10px;
+}
+
+.animazione_penna {
+    position: fixed;
+    top: 110px;
+    right: 110px;
+    width: 22px;
+    z-index: 999;
+    filter: invert(1);
+}
+
+/* FINE ANIMAZIONE */
+
+/* NAV DINAMICA */
+
+#nav_dinamica {
+    display: none;
+}
+
+/*---------------------------------------------------------- Responsive */
+
+@media only screen and (min-width: 1093px) and (max-width: 1268px) {
+
+    #grid_uno {
+        margin-top: -20vh;
+    }
+
+    .prima .titolo {
+        font-size: 9vw;
+    }
+
+    .sinistra img {
+        width: 100%;
+        object-fit: cover;
+        margin-top: 20vh;
+    }
+
+    .testi-flex:first-child {
+        font-size: 1vw;
+    }
+
+    .testi-flex .titolo,
+    .testi-flex .corsivo {
+        font-size: 8.7vw;
+        line-height: 0.6;
+    }
+
+    .p-centrale {
+        width: 50%;
+    }
+
+    .testi .bottone {
+        width: 40%;
+    }
+
+}
+
+@media only screen and (min-width: 874px) and (max-width:1092px) {
+
+    .fascia_verde {
+        display: none;
+    }
+
+    .lines {
+        width: 100%;
+    }
+
+    header {
+        display: none;
+    }
+
+    #nav_responsive {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav_contatti,
+    .nav_hamb,
+    .nav_progetti {
+        width: 80px;
+        height: 80px;
+        background: var(--nero);
+        color: var(--bianco);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        position: relative;
+    }
+
+
+    .nav_progetti svg,
+    .nav_contatti svg,
+    .nav_hamb svg {
+        fill: var(--bianco);
+        width: 30px;
+    }
+
+
+    /* NAV RESPONSIVE E DINAMICA */
+
+    .nav_hamb span {
+        height: 2px;
+        width: 50%;
+        position: absolute;
+        background-color: var(--bianco);
+        top: 40px;
+        transition: all 0.2 ease-in-out;
+    }
+
+    .nav_hamb span::before,
+    .nav_hamb span::after {
+        content: "";
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        background-color: var(--bianco);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .nav_hamb span::before {
+        margin-top: -10px;
+        text-align: center;
+    }
+
+    .nav_hamb span::after {
+        margin-top: 10px;
+    }
+
+    #nav_dinamica {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--verde);
+        z-index: 10;
+        padding: 50px;
+        transform: translateX(-100%);
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        align-items: end;
+    }
+
+    #nav_dinamica .nav_hamb {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+    }
+
+    .contenitore_dinamico {
+        width: 100%;
+        margin-bottom: 150px;
+    }
+
+    .ancore_dinamico {
+        padding-left: 105px;
+        margin-bottom: 150px;
+    }
+
+    #nav_dinamica ul {
+        height: 30%;
+        width: 100%;
+        list-style: none;
+    }
+
+    #nav_dinamica ul li {
+        width: 100%;
+    }
+
+    #nav_dinamica ul li a {
+        display: block;
+        width: 100%;
+        font-size: 30px;
+        font-weight: 400;
+        color: var(--bianco)
+    }
+
+    .socials-flex ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: var(--bianco);
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 200;
+        text-align: center;
+    }
+
+    .menu-open {
+        transform: translateX(0);
+    }
+
+    .hamburger-menu--open span {
+        background-color: transparent;
+    }
+
+    .hamburger-menu--open span::before {
+        background-color: #fff;
+        margin-top: 0;
+        transform: rotate(45deg);
+    }
+
+    .hamburger-menu--open span::after {
+        background-color: #fff;
+        margin-top: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* FINE NAV RESPONSIVE E DINAMICA */
+
+    .animazione {
+        display: none;
+    }
+
+    /* .fascia_verde {
+        display: none;
+    }
+ */
+    .fasce {
+        width: 100%;
+    }
+
+    .lines {
+        width: 100%;
+    }
+
+    .prima .titolo,
+    .prima .corsivo {
+        font-size: 7.7vw;
+    }
+
+    #grid_uno {
+        width: 100%;
+        grid-template-columns: 40% 40%;
+        grid-gap: 95px;
+        z-index: -1;
+        width: 100%;
+        margin: 20vh auto 0 auto;
+    }
+
+    .sinistra img {
+        width: 100%;
+        object-fit: cover;
+        /* margin-top: 45vh; */
+    }
+
+    .velo_gradiente {
+        display: none;
+    }
+
+    .centro img {
+        width: 100%;
+        object-fit: cover;
+        /* margin-top: 45vh; */
+    }
+
+    .destra {
+        display: none;
+    }
+
+    .testi-flex .titolo,
+    .testi-flex .corsivo {
+        font-size: 7.7vw;
+        line-height: 0.6;
+    }
+
+    .p-centrale {
+        width: 60%;
+    }
+
+    .testi .bottone {
+        width: 50%;
+    }
+
+    .sezione_sinistra .titolo,
+    .sezione_destra .titolo {
+        font-size: 7vw;
+    }
+
+    .sezione_sinistra .corsivo,
+    .sezione_destra .corsivo {
+        font-size: 7vw;
+    }
+
+    .sezione_sinistra .p-centrale,
+    .sezione_destra .p-centrale {
+        width: 100%;
+        text-align: left;
+        margin: 100px 0 0 0;
+    }
+
+    #carnet .titolo,
+    #carnet .corsivo {
+        font-size: 7vw;
+    }
+
+    .inspiration {
+        font-size: 1.3vw;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+
+    #contenitore_sesta {
+        grid-gap: 3vw;
+    }
+
+    #contenitore_sesta .p-centrale {
+        width: 95%;
+    }
+
+    #sesta .titolo,
+    #sesta .corsivo {
+        font-size: 7.7vw;
+    }
+
+    #sezione_sette .titolo,
+    #sezione_sette .corsivo {
+        font-size: 6vw;
+        padding-top: 10px;
+    }
+
+    #otto .titolo,
+    #otto .corsivo {
+        font-size: 6vw;
+    }
+
+    .otto_grid .p_sx {
+        font-size: 2.5vw;
+    }
+
+    .contenitore_footer .col_cx {
+        margin-left: 5vw;
+    }
+
+    .logo_verticale {
+        width: 35px;
+        height: 125px;
+        position: fixed;
+        top: 3vw;
+        left: 3vw;
+    }
+
+}
+
+@media only screen and (max-width:873px) {
+   
+    .fascia_verde {
+        display: none;
+    }
+
+    .lines {
+        width: 100%;
+    }
+   
+    header {
+        display: none;
+    }
+
+    #nav_responsive {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav_contatti,
+    .nav_hamb,
+    .nav_progetti {
+        width: 55px;
+        height: 55px;
+        background: var(--nero);
+        color: var(--bianco);
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+
+
+    .nav_progetti svg,
+    .nav_contatti svg,
+    .nav_hamb svg {
+        fill: var(--bianco);
+        width: 20px;
+    }
+
+    .animazione {
+        display: none;
+    }
+
+    .logo_verticale {
+        width: 35px;
+        height: 125px;
+        position: fixed;
+        top: 3vw;
+        left: 3vw;
+    }
+
+    .fasce {
+        width: 100%;
+    }
+
+    .lines {
+        width: 100%;
+    }
+
+    .prima .titolo,
+    .prima .corsivo {
+        font-size: 7.7vw;
+    }
+
+    #grid_uno {
+        width: 100%;
+        grid-template-columns: 40% 40%;
+        grid-gap: 95px;
+        z-index: -1;
+        width: 100%;
+        margin-top: -85px;
+    }
+
+    .sinistra img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .velo_gradiente {
+        display: none;
+    }
+
+    .centro img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .destra {
+        display: none;
+    }
+
+    .testi-flex .titolo,
+    .testi-flex .corsivo {
+        font-size: 6vw;
+        line-height: 0.6;
+    }
+
+    .p-centrale {
+        width: 60%;
+        font-size: 2.2vw;
+    }
+
+    .testi .bottone {
+        width: 50%;
+    }
+
+    .sezione_sinistra .titolo,
+    .sezione_destra .titolo {
+        font-size: 5vw;
+    }
+
+    .sezione_sinistra .corsivo,
+    .sezione_destra .corsivo {
+        font-size: 5vw;
+    }
+
+    .sezione_sinistra .p-centrale,
+    .sezione_destra .p-centrale {
+        width: 100%;
+        text-align: center;
+        margin: 50px 0 0 0;
+        padding: 0 50px;
+        font-size: 15px;
+    }
+
+    .sezione_sinistra .bottone {
+        margin: 100px auto 0 auto;
+        ;
+    }
+
+    #carnet .titolo,
+    #carnet .corsivo {
+        font-size: 7vw;
+    }
+
+    .inspiration {
+        font-size: 1.7vw;
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height: 4;
+    }
+
+    #contenitore_sesta {
+        grid-gap: 3vw;
+    }
+
+    #contenitore_sesta .p-centrale {
+        width: 95%;
+    }
+
+    #sesta .titolo,
+    #sesta .corsivo {
+        font-size: 7.7vw;
+    }
+
+    #sezione_sette .titolo,
+    #sezione_sette .corsivo {
+        font-size: 6vw;
+        padding-top: 10px;
+    }
+
+    #otto .titolo,
+    #otto .corsivo {
+        font-size: 6vw;
+    }
+
+    .otto_grid .p_sx {
+        font-size: 2.5vw;
+    }
+
+    .contenitore_footer .col_cx {
+        margin-left: 5vw;
+    }
+
+}
+
+@media only screen and (min-width: 390px) and (max-width: 873px) {
+    .bottone {
+        height: 50px;
+        width: 200px;
+    }
+
+    .bottone a p {
+        font-size: 13px;
+    }
+
+    .freccia {
+        display: none;
+    }
+
+    #grid_uno {
+        display: block;
+        width: 100%;
+    }
+
+    .sinistra img {
+        display: none;
+    }
+
+    .blocco_centrale img {
+        height: 450px;
+    }
+
+    .testi .p-centrale {
+        width: 100%;
+    }
+
+    #atelier {
+        display: none;
+    }
+
+    .atelier_responsive {
+        display: block;
+        width: 100%;
+    }
+
+    .immagine_sinistra {
+        max-width: 100%;
+        margin-top: -150px;
+
+    }
+
+    .sezione_sinistra {
+        text-align: center;
+    }
+
+    .sezione_sinistra .p_piu_bottone .p_centrale {
+        padding: 0 20px 0 20px;
+        font-size: 10px;
+    }
+
+    .immagine_destra {
+        max-width: 100%;
+        margin: 0 0 0 -45.7vw;
+    }
+
+    .immagine_destra img {
+        /* max-width: 100%; */
+        width: 100%;
+        height: 300px;
+        margin-top: -60px;
+    }
+
+    .sezione_destra {
+        margin: 0 auto;
+        padding-top: 150px;
+        text-align: center;
+    }
+
+    .sezione_destra .p_piu_bottone {
+        text-align: center;
+    }
+
+    .sezione_destra .bottone {
+        margin: 50px auto;
+    }
+
+    #carnet {
+        display: block;
+        text-align: center;
+        padding: 0 0 20px 0;
+    }
+
+    #carnet .uno,
+    #carnet .due,
+    #carnet .tre {
+        display: none;
+    }
+
+    #carnet .bottone {
+        margin: 50px auto;
+    }
+
+    #contenitore_sesta {
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+
+    .accompagnamento {
+        max-width: 100%;
+    }
+
+    #contenitore_sesta .p-centrale {
+        text-align: center;
+        padding: 0 25px;
+    }
+
+    #sezione_sette .p-centrale {
+        margin: 0;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    .marche {
+        padding: 0;
+    }
+
+    .marche img {
+        width: 40vw;
+    }
+
+    .otto_grid {
+        display: block;
+        padding-bottom: 20px;
+    }
+
+    .otto_grid .bottone {
+        /* text-align: left; */
+        margin: 50px 0;
+        width: 30vw;
+    }
+
+    .contenitore_footer {
+        display: block;
+    }
+
+    .contenitore_footer .inspiration {
+        margin-bottom: 10px;
+    }
+
+    .contenitore_footer .bottone_penultimo {
+        width: 100%;
+    }
+
+    .contenitore_footer .col_cx {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+    }
+
+    .contenitore_footer .inspiration,
+    .contenitore_footer .p-centrale {
+        width: 39%;
+        margin: 10px 0 20px 0;
+    }
+
+    .contenitore_footer .col_dx {
+        display: block;
+        text-align-last: left;
+        padding: 0;
+    }
+
+    .contenitore_footer .socials,
+    .contenitore_footer .crediti {
+        padding: 30px 0 30px 0;
+    }
+
+}
