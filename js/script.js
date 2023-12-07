@@ -11,6 +11,14 @@ function apri_menu() {
 }
 /*----------------------------------- Sezione Prima */
 /* Logo rotante */
+
+gsap.from(".animazione", {
+    opacity: 0,
+    scale: 0,
+    duration: 1,
+    ease: "power1"
+})
+
 gsap.from(".animazione_titolo", {
     duration: 10,
     rotation: 360,

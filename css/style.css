@@ -12,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
 }
 
 /* -----------------------------------------------Fascia verde laterale */
@@ -114,13 +115,10 @@ main {
 
 .prima a {
     color: var(--nero);
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--nero);
     position: relative;
 }
 
-.prima a::after {
+nav ul a::after {
     content: '';
     position: absolute;
     top: 100%;
@@ -131,7 +129,7 @@ main {
     background-color: var(--nero);
 }
 
-.prima a:hover::after {
+nav ul a:hover::after {
     width: 100%;
     transition: width .3s ease;
 }
@@ -143,12 +141,6 @@ header {
     left: 6vw;
     z-index: 990;
 }
-
-#nav_responsive {
-    display: none;
-    z-index: 999;
-}
-
 
 nav ul {
     display: flex;
@@ -165,9 +157,14 @@ nav ul li {
     mix-blend-mode: screen;
 }
 
+#nav_responsive {
+    display: none;
+    z-index: 999;
+}
+
 /* Pseudoelementi */
 
-nav ul li::after {
+/* nav ul li::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -181,7 +178,7 @@ nav ul li::after {
 nav ul li:hover::after {
     width: 100%;
     transition: width .3s ease;
-}
+} */
 
 /*--------------------------------------------------------------------- Sezione Prima */
 
@@ -330,7 +327,7 @@ nav ul li:hover::after {
 }
 
 .testi-flex .titolo,
-.testi-flex>p {
+.testi-flex > p {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -749,8 +746,8 @@ footer .col_dx a {
 
 .animazione_titolo {
     position: fixed;
-    top: 50px;
-    right: 50px;
+    top: 0;
+    right: 0;
     width: 150px;
     height: 150px;
     z-index: 999;
@@ -760,8 +757,8 @@ footer .col_dx a {
 
 .animazione_penna {
     position: fixed;
-    top: 110px;
-    right: 110px;
+    top: 60px;
+    right: 60px;
     width: 22px;
     z-index: 999;
     filter: invert(1);
@@ -901,13 +898,13 @@ footer .col_dx a {
     }
 
     #nav_dinamica {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
         background: var(--verde);
-        z-index: 800;
+        z-index: 999;
         padding: 50px;
         transform: translateX(-100%);
         transition: all 0.5s ease-in-out;
@@ -1222,13 +1219,13 @@ footer .col_dx a {
     }
 
     #nav_dinamica {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
         background: var(--verde);
-        z-index: 800;
+        z-index: 999;
         padding: 50px;
         transform: translateX(-100%);
         transition: all 0.5s ease-in-out;
@@ -1354,6 +1351,10 @@ footer .col_dx a {
         margin: 2rem 0;
     }
 
+    .agencements {
+        font-size: 0.8rem;
+    }
+
     .sezione_sinistra .titolo,
     .sezione_destra .titolo {
         font-size: 5vw;
@@ -1462,8 +1463,7 @@ footer .col_dx a {
     }
 
     .testi .p-centrale {
-        width: 100%;
-        
+        width: 100%; 
     }
 
     .testi .bottone {
